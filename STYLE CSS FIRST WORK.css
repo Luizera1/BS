@@ -1,0 +1,531 @@
+/*====  RESET ============================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 90%;
+  height: flex;
+}
+
+/*====  VARIABLES ============================ */
+:root {
+  --header-height: -3.5rem;
+  /* colors */
+  --hue: 159;
+  /* HSL color mode */
+  --base-color: hsl(var(--hue) 36% 57%);
+  --base-color-second: hsl(var(--hue) 65% 88%);
+  --base-color-alt: hsl(var(--hue) 57% 53%);
+  --title-color: hsl(var(--hue) 41% 10%);
+  --text-color: hsl(0 0% 46%);
+  --text-color-light: hsl(0 0% 98%);
+  --body-color: hsl(0 0% 98%);
+}
+
+/*====  BASE ============================ */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font: 400 1rem 'DM Sans', sans-serif;
+  color: var(--text-color);
+  background: rgb(246, 249, 255);
+  -webkit-font-smoothing: antialiased;
+  margin: 19px;
+}
+
+.title {
+  font: 700 1.875rem 'Poppins', sans-serif;
+  color: var(--title-color);
+  -webkit-font-smoothing: auto;
+}
+
+.button {
+  background-color: rgb(111, 131, 171);
+  color: rgb(255, 255, 255);
+  height: 3.5rem;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 2rem;
+  border-radius: 1rem;
+  font: 500 1rem 'DM Sans', sans-serif;
+  transition: background 0.3s;
+  margin-top: 5rem;
+}
+
+.button:hover {
+  background: rgb(35, 35, 74);
+}
+
+.divider-1 {
+  height: 1px;
+  background: linear-gradient(270deg, rgb(55, 55, 132) 0%, white 100%);
+}
+
+/*====  LAYOUT ============================ */
+.container {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.section {
+  padding: 11rem 0;
+}
+
+.section header {
+  margin-bottom: 0rem;
+}
+
+.section header strong {
+  color: rgb(152, 181, 248);
+}
+
+.grid {
+  display: grid;
+  margin-top: -15rem;
+  
+ 
+}
+
+#header {
+  border-bottom: 5px solid rgb(171, 170, 170);
+  margin-bottom: 1rem;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background-color: rgb(216, 231, 247);
+  width: 100%;
+}
+
+#header.scroll {
+  background: rgb(232, 232, 233);
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.15);
+}
+
+nav {
+  height: 2.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav .menu {
+  opacity: 0;
+  visibility: hidden;
+  top: -20rem;
+  transition: 0.2s;
+}
+nav.show .menu {
+  opacity: 1;
+  visibility: visible;
+  background: rgb(237, 237, 237);
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  place-content: center;
+}
+
+nav ul li {
+  text-align: center;
+}
+
+nav.show .menu ul {
+  display: grid;
+  margin-top: 3.4rem;
+  gap: 1rem;
+}
+
+nav ul li a::after {
+  content: '';
+  width: 0%;
+  height: 3px;
+  background: rgb(144, 212, 247);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transition: width 0.2s;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+nav ul li a:hover {
+  transition: 0.3s;
+  position: relative;
+}
+
+nav ul li a:hover {
+  color: rgb(152, 181, 248);
+}
+
+nav .icon-close {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  right: 1.5rem;
+  transition: 0.2s;
+  top: -1.5rem;
+}
+
+nav.show div.icon-close {
+  visibility: visible;
+  opacity: 1;
+  top: 1.5rem;
+}
+
+nav .menu ul {
+  display: none;
+}
+
+.toggle {
+  color: gray;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-left: 39rem;
+}
+
+.logo {
+  font: 700 1.3rem 'Poppins', sans-serif;
+  color: black;
+}
+
+.logo span {
+  color: rgb(167, 195, 251);
+}
+
+main {
+  margin-top: 2rem;
+  align-items: center;
+}
+
+/*====  HOME ============================ */
+#home {
+  overflow: hidden;
+}
+
+#home .container {
+  margin: 2rem;
+}
+
+#home .image {
+  position: relative;
+}
+
+#home .image::before {
+  content: '';
+  height: 60%;
+  width: 80%;
+  background: rgb(164, 185, 221);
+  position: absolute;
+  top: -3rem;
+  left: 17%;
+  z-index: 0;
+}
+
+#home .image img {
+  position: relative;
+}
+
+#home .image img,
+#home .image::before {
+  border-radius: 5rem;
+}
+
+#home .text {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  text-align: center;
+}
+
+#home .text h2 {
+  margin-bottom: 1rem;
+}
+
+#home .text p {
+  margin-bottom: 2rem;
+  max-width: 100%;
+}
+
+/*Sobre nós*/
+
+#about {
+  background: white;
+}
+
+#about .container {
+  margin: 6rem;
+  margin-left: 1rem;
+}
+
+#about .image {
+  position: relative;
+}
+
+#about .image::before {
+  content: '';
+  height: 94%;
+  width: 79%;
+  background: rgb(164, 185, 221);
+  position: absolute;
+  top: -3rem;
+  left: 23%;
+  z-index: 0;
+}
+
+#about .image img {
+  position: relative;
+  right: 2rem;
+  left: 2rem;
+}
+
+#about .image img,
+#about .image::before {
+  border-radius: 5rem;
+}
+
+#about .text {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+  margin-top: 1.3rem;
+  margin-bottom: -5rem;
+}
+
+p {
+  margin-left: 3rem;
+}
+
+div .title {
+  text-align: center;
+  margin-top: 2rem;
+}
+div .title1 {
+  text-align: center;
+  font: 700 1.875rem 'Poppins', sans-serif;
+  color: black;
+}
+
+div .card {
+  text-align: center;
+}
+
+/*==============Serviços========================*/
+
+m {
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
+
+.card {
+  padding: 4rem 5rem;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.3);
+  border-bottom: 0.25rem solid rgb(164, 185, 221);
+  border-radius: 0.25rem 0.25 0 0;
+  text-align: center;
+  margin-top: 1rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.card i {
+  display: block;
+  margin-bottom: 1rem;
+  font-size: 6rem;
+  color: rgb(164, 185, 221);
+}
+
+.card .title {
+  font-size: 1.5rem;
+  margin-bottom: -1rem;
+}
+
+/*==================Depoimentos================*/
+
+#testimonials {
+  margin-bottom: 2;
+}
+
+#testimonials {
+  background: rgb(255, 255, 255);
+}
+
+#testimonials blockquote {
+  padding: 2rem;
+  box-shadow: 1px 1px 7px rgb(0, 0, 0);
+  border-radius: 0.5rem;
+}
+
+#testimonials blockquote p span {
+  font: 700 2rem serif;
+  position: absolute;
+  top: -0.7rem;
+  left: -1.1rem;
+  color: rgb(55, 55, 132);
+}
+#testimonials blockquote p {
+  position: relative;
+  text-indent: 1.185rem;
+  margin-bottom: 1.5rem;
+}
+
+#testimonials cite {
+  display: flex;
+  align-items: center;
+  font-style: normal;
+}
+
+#testimonials cite img {
+  width: 2rem;
+  height: 2rem;
+  object-fit: cover;
+  clip-path: circle();
+  margin-right: 0.5;
+}
+
+.swiper-slide {
+  height: auto;
+  padding: 4rem 1rem;
+}
+
+.swiper-pagination-bullet-active {
+  background: rgb(106, 106, 223);
+}
+
+/*=======Contato==========*/
+
+#contact .grid {
+  color: rgb(106, 106, 223);
+  font-size: 1.4rem;
+  margin-left: 380px;
+  margin-top: -3rem;
+  gap: 1rem;
+}
+
+#contact .text p {
+  margin-bottom: 2rem;
+  margin: 2rem;
+  text-align: center;
+  font-size: 1.2rem;
+  color: black;
+  margin-left: -11rem;
+}
+
+#contact .button {
+  margin-left: -11.5rem;
+  margin-top: 5rem;
+}
+
+#contact ul li i {
+  font-size: 1.3rem;
+  margin-right: 1rem;
+}
+
+#contact ul.grid {
+  margin-left: -11rem;
+  margin-top: 1rem;
+}
+
+#contact ul li i {
+  color: rgb(102, 141, 209);
+}
+
+#contact i {
+  margin-right: 0.5rem;
+}
+
+/* ====== Rodape =======*/
+
+footer {
+  background: rgb(102, 141, 209);
+}
+
+footer .logo {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  margin-top: 10rem;
+  margin-bottom: 3rem;
+}
+
+p {
+  color: rgb(27, 27, 27);
+  margin-left: -0.18rem;
+  margin-top: 1rem;
+}
+
+footer i {
+  color: rgb(255, 254, 254);
+  font-size: 1.7rem;
+  margin-top: 2rem;
+}
+
+footer .social a {
+  transition: 0.2s;
+  display: inline-block;
+}
+
+footer .social a:hover {
+  transform: translateY(-7px);
+}
+
+/* ============back to top===================*/
+
+.back-to-top {
+  background: rgb(188, 210, 255);
+  color: rgb(0, 0, 0);
+
+  position: fixed;
+  right: 1rem;
+  bottom: 1.5rem;
+
+  padding: 0.3rem;
+  clip-path: circle();
+
+  font-size: 1.5rem;
+  line-height: 0;
+
+  visibility: hidden;
+  opacity: 0;
+
+  transition: 0.3s;
+  transform: translateY(100%);
+}
+
+.back-to-top.show {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/*===========  Media Queries  ===========*/
+
+/* extra large devices: 1200 > */ /*ok */
+/*large devices:1023 >*/
+/*large devices: 992 >*/
+/*medium devices: 712 > TAble diminuir imagem 2 - centralizar "entre em contato...
+e dimimuir o cabeçalho*/
+/*small devices: 360 > Motorola dimuir a imagem 2 - diminuir cabeçalho - 
+centralizar conteúdo Sobre Nós - Centralizar Enre em contato...*/
+
+@media (min-width: 120px) {
+  #home .image::before {
+  }
+}
